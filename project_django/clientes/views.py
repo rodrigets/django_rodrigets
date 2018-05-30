@@ -5,7 +5,7 @@ from .forms import PersonForm
 # Create your views here.
 def persons_list(request):
     persons = Person.objects.all()
-    return render(request, 'person.html', {'person': persons})
+    return render(request, 'person.html', {'persons': persons})
 
 def person_new(request):
     form = PersonForm(request.POST, None)
