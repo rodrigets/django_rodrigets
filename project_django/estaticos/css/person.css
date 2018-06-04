@@ -1,0 +1,121 @@
+@keyframes crazy_border {
+    0%   {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    14.3%   {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    28.6%   {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 0;
+    }
+    42.9%   {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    57.2%   {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 0;
+    }
+    71.5%   {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    85.8%   {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    100%   {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+@keyframes crazy_hover_list {
+    0%   {border-color: #9400D3;}
+    16.6%   {border-color: #4B0082;}
+    33.3%   {border-color: #0000FF;}
+    50%   {border-color: #00FF00;}
+    66.6%   {border-color: #FFFF00;}
+    83.3%   {border-color: #FF7F00;}
+    100%   {border-color: #FF0000;}
+}
+
+@keyframes crazy_hover_item {
+    0%   {background-color: #AAA;}
+    50%   {background-color: #888;}
+    100%   {background-color: #AAA;}
+}
+
+@keyframes crazy_float_item {
+    0%   {width: 0;}
+    50%   {width: 100%;}
+    100%   {width: 0;}
+}
+
+.persons {
+    margin: 50px auto 0;
+    max-width: 500px;
+    padding: 20px 0;
+    background-color: #F5F5F5;
+    animation-name: crazy_border;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.persons > div {
+    padding: 5px 5%;
+    margin-right: 0;
+    margin-left: 0;
+    color: #222;
+    font-size: 16px;
+    transition: .3s;
+    border-left: 5px solid transparent;
+}
+
+.persons >div:last-child{
+    padding: 0;
+}
+
+.persons > div:hover{
+    border-left-width: 5px;
+    border-left-style: solid;
+    transition: .1s;
+    animation: crazy_hover_list .5s infinite, crazy_hover_item 2s infinite;
+}
+
+.persons > div:hover > span{
+    animation: crazy_float_item 1s infinite;
+    display: block;
+    text-align: right;
+}
+
+.persons > div:hover, .persons > div a:hover{
+    background-color: #AAA;
+    color: #FFF;
+    transition: .3s;
+}
+
+.persons > div a{
+    padding: 5px 5%;
+    width: 100%;
+    display: block;
+}
